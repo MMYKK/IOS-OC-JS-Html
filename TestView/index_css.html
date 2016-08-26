@@ -1,0 +1,158 @@
+<? DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>级联样式表的使用</title>
+
+	<!-- 
+	<style type = "text/css">
+	ol{
+		list-style-type: upper-alpha;
+	}
+
+	ul{
+		list-style-type: disc;
+	}
+
+	h1{
+		color: navy;
+		font-size: 18px;
+	}
+
+	h2{
+		color: blue;
+	}
+
+	h3{
+		color: yellow;
+	}
+
+	h2,h3{
+		font-size: 14px;
+	}
+
+	hr{
+		background-color: red;
+		color: red;
+		height: 5px;
+		width: 50%;
+		text-align: left;
+	}
+
+	.weed{
+		color:red;
+	}
+
+
+	#handle{
+		color:blue;
+	}
+
+	a:link{
+		color: blue;
+	}
+	a:visited{
+		color: green;
+	}
+	a:hover{
+		color: lime;
+	}
+	a:active{
+		color: red;
+	}
+	</style> 
+	-->
+
+	<!-- <link rel = "stylesheet" type = "text/css" href ="default.css"> -->
+
+
+	<script type="text/javascript">
+		function changeListen(mesg){
+			//此函数主要是给OC监听，传值使用
+			ocListenner(mesg,'额外感兴趣的参数1','额外感兴趣的参数2');
+		};
+
+		//此函数主要是给OC传值使用
+		function addLink(){
+			var aButton = document.getElementsByTagName('input');
+			var href = 'objc://';
+			for(var i = 0; i < aButton.length ; ++i){
+				href = href + ':/' + aButton[i].value;
+			}
+			window.location.href = href;
+		}
+
+
+		//此函数是OC调用JS使用
+		function callOnJS(mesg){
+			document.getElementById('id_title').innerHTML = mesg;
+		}
+
+		//此函数是OC调用JS使用
+		function changeRate(content){
+			document.getElementById("id_title").innerHTML = content;
+		};
+
+		//此函数是OC调用JS使用
+        function showAlert(mesg){
+        	alert(mesg);
+        }
+
+		function asyncAlert(content) {
+                setTimeout(function(){
+                           alert(content);
+                           },1);
+            }
+
+	</script>
+</head>
+
+<body>
+	<h1 id = "id_title">花卉大全</h1>
+	<h2>教你如何种植花卉</h2>
+	<h3>花卉的种植方法</h3>
+	<ol>
+	<li>种子的使用方法
+		<ul>
+			<li class = "weed">种子使用前需要浸泡一下</li>
+			<li>不要发霉的种子</li>
+			<li class = "weed">不要虫蛀的种子</li>
+		</ul>
+	</li>
+	<li id = "handle">杀虫剂的使用方法</li>
+	<li>怎么合理去除草</li>
+	</ol>
+	<a href = "TargetURL/indexNew.html" target="_blank">此处教你怎么合理除草</a><br>
+	<a href = "TargetURL/indexNew.html">本页打开</a>
+	<br>
+	<input type="button" style="width:200px;height:40px" value="这是一个按钮（用来OC和JS进行交互）" onclick="changeListen('给OC传值')" />
+	<input type="button" style="width:200px;height:40px" value="这是一个按钮（OC交互，实质链接）" onclick = "addLink()" />
+	<hr>
+	易宝支付&trade;版权所有，侵权必究&copy;
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
